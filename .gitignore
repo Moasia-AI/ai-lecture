@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 비공개 노트 (전도사님만 보는 작업 메모)
+/TOPICS.md
+/content/_drafts/
