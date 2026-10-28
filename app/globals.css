@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfaf4;
+  --foreground: #2a2a2a;
+  --muted: #6b6b6b;
+  --accent: #c67b3f;
+  --accent-soft: #f4e6d4;
+  --card: #ffffff;
+  --border: #ebe3d4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --font-sans: var(--font-sans-korean);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans-korean), "Pretendard", "Apple SD Gothic Neo",
+    "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.prose-reader {
+  color: var(--foreground);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.prose-reader h1,
+.prose-reader h2,
+.prose-reader h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  margin-top: 2em;
+  margin-bottom: 0.7em;
+  line-height: 1.35;
+}
+
+.prose-reader h1 {
+  font-size: 1.9rem;
+}
+.prose-reader h2 {
+  font-size: 1.45rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.7rem;
+}
+.prose-reader h3 {
+  font-size: 1.2rem;
+}
+
+.prose-reader p {
+  margin: 1.1em 0;
+}
+
+.prose-reader strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.prose-reader em {
+  font-style: normal;
+  background: var(--accent-soft);
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
+.prose-reader ul,
+.prose-reader ol {
+  padding-left: 1.4em;
+  margin: 1em 0;
+}
+
+.prose-reader ul li {
+  list-style: disc;
+  margin: 0.4em 0;
+}
+
+.prose-reader ol li {
+  list-style: decimal;
+  margin: 0.4em 0;
+}
+
+.prose-reader blockquote {
+  border-left: 4px solid var(--accent-soft);
+  background: #fbf5ea;
+  padding: 0.8em 1.1em;
+  margin: 1.3em 0;
+  color: var(--muted);
+  border-radius: 0 8px 8px 0;
+}
+
+.prose-reader blockquote p {
+  margin: 0;
+}
+
+.prose-reader a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-reader code {
+  background: #f4ead6;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.92em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.prose-reader pre {
+  background: #2a2a2a;
+  color: #f7f1e6;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  margin: 1.2em 0;
+}
+
+.prose-reader pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.prose-reader hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 2em 0;
 }
